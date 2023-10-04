@@ -20,7 +20,7 @@ const displaycountries = (data) => {
          <h5 class="text-light">Capital     :  ${Elementdata.capital}</h5>
          <h5 class="text-light">Region      :  ${Elementdata.region}</h5>
          <h5 class="text-light">Country code:  ${Elementdata.callingCodes[0]}</h5>
-         <button onclick=(block(${Elementdata.name})) type="button" class="btn btn-secondary border border-dark">Click For Weather</button>
+         <button onclick="block('${Elementdata.name}')" type="button" class="btn btn-secondary border border-dark">Click For Weather</button>
        
          </div>;
      `  
@@ -35,15 +35,16 @@ async function block(cityname){
     console.log(cityname)
     let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=d3e506754c7c6054d2a6c7e680b5a02f`
 
-        let data=await fetch(url)
-        let res=await data.json()
-        console.log(res)
+        let res=await fetch(url)
+        let data=await res.json()
+      
         
-   res.alert(`
+   alert(`
     
-   For ${cityname.id}  
+   For ${cityname}  
    Current Humidity is ${data.main.humidity}
    Current Pressure is ${data.main.pressure}
    Current Temperature is ${data.main.temp}
     `)
 }
+block()
