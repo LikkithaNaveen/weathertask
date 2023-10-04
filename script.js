@@ -41,10 +41,10 @@ async function block(cityname){
         
    alert(`
     
-   For ${cityname}  
-   Current Humidity is ${data.main.humidity}
-   Current Pressure is ${data.main.pressure}
-   Current Temperature is ${data.main.temp}
+    For ${cityname}  
+    Humidity is ${data.main.humidity}
+    Pressure is ${data.main.pressure}
+    Temperature is ${data.main.temp}
     `)
 }
 block()
